@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Girlfriend Prushti?</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe6f0;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+    }
+    .yes-button {
+      background-color: #ff4d88;
+      color: white;
+    }
+    .no-button {
+      background-color: #ccc;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #cc0052;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Will you be my Girlfriend? 💘</h1>
+
+<button class="yes-button" onclick="handleYesClick()">Yes 💖</button>
+<button class="no-button" onclick="handleNoClick()">No 💔</button>
+
+<script>
+let messageIndex = 0;
+
+const messages = [
+  "No 💔",
+  "Are you sure? 🥺",
+  "Don’t break my heart 💔",
+  "Come on, be my Girlfriend 😭"
+];
+
+function handleNoClick() {
+  const noButton = document.querySelector(".no-button");
+  const yesButton = document.querySelector(".yes-button");
+
+  noButton.textContent = messages[messageIndex];
+  messageIndex = (messageIndex + 1) % messages.length;
+
+  const currentSize = parseFloat(
+    window.getComputedStyle(yesButton).fontSize
+  );
+
+  yesButton.style.fontSize = `${currentSize * 1.5}px`;
+}
+
+function handleYesClick() {
+  document.body.innerHTML = `
+    <h1>Yay!!! 💕</h1>
+    <h2>You just made me the happiest person 😍</h2>
+    <p>I Love Youuu Prushti ❤️</p>
+  `;
+}
+</script>
+
+</body>
+</html>
